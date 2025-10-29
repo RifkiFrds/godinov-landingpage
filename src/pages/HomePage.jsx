@@ -1,12 +1,14 @@
 import React from 'react'
-import HeroSection from '../components/HeroSection';
+import Layouts from '../layouts/Layouts';
+import Navbar from '../layouts/Navbar';
 
-function HomePage() {
-  return (
-    <>
-    <HeroSection />
-    </>
-  )
+function HomePage(){
+	return(
+		<>
+			<Navbar />
+			<Layouts />
+		</>
+		);
 }
 
-export default HomePage;
+export default HomePage
