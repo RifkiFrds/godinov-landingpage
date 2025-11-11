@@ -1,12 +1,18 @@
 import React from 'react'
-import Layouts from '../layouts/Layouts';
-import Navbar from '../layouts/Navbar';
+import HeroSection from "../sections/HeroSection"
+import Banner from '../sections/Banner';
+import AboutSection from '../sections/AboutSection';
+import ServiceSection from '../sections/ServiceSection';
+import PricingSection from '../sections/PricingSection';
 
 function HomePage(){
 	return(
 		<>
-			<Navbar />
-			<Layouts />
+		<HeroSection />
+		<Banner />
+		<AboutSection />
+		<ServiceSection />
+		<PricingSection />
 		</>
 		);
 }
