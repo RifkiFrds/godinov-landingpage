@@ -1,63 +1,127 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
+import { 
+  Instagram, 
+  Linkedin, 
+  Mail, 
+  Phone, 
+  MapPin 
+} from "lucide-react";
+import logoUrl from "../assets/images/logo.png"; // Menggunakan import Anda
+import { Heading, Paragraph } from "../components/ui/Text"; 
 
+// Helper Component kecil untuk link
+const FooterLink = ({ href, children }) => (
+  <motion.a
+    href={href}
+    className="text-godinov-bg/70 hover:text-godinov-bg transition-colors duration-200"
+    whileHover={{ y: -2 }}
+    transition={{ type: "spring", stiffness: 300 }}
+  >
+    {children}
+  </motion.a>
+);
 
+// Helper Component untuk ikon sosial
+const SocialIcon = ({ href, icon: Icon }) => (
+  <motion.a
+    href={href}
+    className="text-godinov-bg/70 hover:text-godinov-bg transition-colors duration-200"
+    whileHover={{ scale: 1.1, y: -2 }}
+    transition={{ type: "spring", stiffness: 300 }}
+  >
+    <Icon size={20} />
+  </motion.a>
+);
 
-
-
-export default function Footer(){
-	return(
-
-		<footer class="bg-white border-t border-gray-100">
-            <div class="container mx-auto px-4 pt-16 pb-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div class="md:col-span-2">
-                        <a href="#" class="flex items-center gap-2">
-                            <img src="./images/logo.png" alt="Logo Godinov" class="h-10 w-10"></img>
-                            <span class="font-bold text-2xl text-slate-800">Godinov</span>
-                        </a>
-                        <p class="text-subtle mt-4 max-w-sm">
-                            Godinov Adalah Sebuah Perusahaan Startup Di Bidang Web dan App Development.
-                        </p>
-                        <div class="flex gap-4 mt-6">
-                            <a href="#" class="text-gray-400 hover:text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.422.724-.665 1.565-.665 2.458 0 1.999 1.018 3.76 2.56 4.798-.943-.03-1.828-.29-2.6-.722v.065c0 2.79 1.983 5.122 4.608 5.658-.48.13-.99.198-1.52.198-.37 0-.73-.037-1.08-.103.732 2.29 2.848 3.96 5.352 4.008-1.97 1.54-4.464 2.45-7.16 2.45-.46 0-.91-.026-1.36-.08.254 1.63 5.56 2.66 9.1 2.66 10.92 0 16.89-9.04 16.89-16.89 0-.256-.006-.51-.017-.764.16-.118 1.11-.8 1.53-1.582z"/></svg>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.669 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.669-4.771 4.919-4.919 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-bold text-lg text-slate-800">Tech Stack</h4>
-                        <ul class="mt-4 space-y-2">
-                            <li><a href="#" class="text-subtle hover:text-slate-900">HTML</a></li>
-                            <li><a href="#" class="text-subtle hover:text-slate-900">TailwindCSS</a></li>
-                            <li><a href="#" class="text-subtle hover:text-slate-900">JS</a></li>
-                            <li><a href="#" class="text-subtle hover:text-slate-900">REACT</a></li>
-                            <li><a href="#" class="text-subtle hover:text-slate-900">LARAVEL</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-bold text-lg text-slate-800">About Us</h4>
-                        <ul class="mt-4 space-y-2">
-                            <li><a href="#" class="text-subtle hover:text-slate-900">Employee</a></li>
-                            <li><a href="#" class="text-subtle hover:text-slate-900">Company Profile</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-12 border-t border-gray-100 pt-8 text-center">
-                    <p class="text-subtle text-sm">
-                        ©2025 Godinov Corporation. All Rights Reserved
-                    </p>
-                </div>
+export default function Footer() {
+  return (
+    <footer className="bg-godinov pt-20 pb-10 font-poppins text-godinov-bg">
+      <div className="max-w-6xl mx-auto px-6">
+        
+        {/* --- Bagian 2: Link Utama Footer --- */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          
+          {/* Kolom Kiri: Logo, Tagline, Sosial */}
+          <div className="md:col-span-4 lg:col-span-5">
+            <img 
+              src={logoUrl} 
+              alt="Godinov" 
+              className="h-9 mb-4" 
+              onError={(e) => e.target.src = 'https://placehold.co/150x40/FFFFFF/1B0F4E?text=Godinov&font=poppins'}
+            />
+            {/* MENGGUNAKAN KOMPONEN PARAGRAPH */}
+            <Paragraph 
+              size="sm"
+              className="text-godinov-bg/80 leading-relaxed max-w-xs"
+            >
+              Bergerak menuju hasil profesional. Solusi digital yang rapi, cepat, dan terarah.
+            </Paragraph>
+            <div className="flex items-center gap-5 mt-6">
+              <SocialIcon href="#" icon={Instagram} />
+              <SocialIcon href="#" icon={Linkedin} />
+              <SocialIcon href="#" icon={Mail} />
             </div>
-        </footer>
+          </div>
+          
+          {/* Kolom Kanan: Navigasi Links */}
+          {/* Mengubah sm:grid-cols-4 menjadi sm:grid-cols-3 */}
+          <div className="md:col-span-8 lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-semibold text-godinov-bg mb-4">Perusahaan</h3>
+              <nav className="flex flex-col gap-3">
+                <FooterLink href="#about">Tentang Kami</FooterLink>
+                <FooterLink href="#services">Layanan</FooterLink>
+                <FooterLink href="#portfolio">Portofolio</FooterLink>
+                <FooterLink href="#blog">Blog</FooterLink>
+              </nav>
+            </div>
 
-	);
+            <div>
+              <h3 className="font-semibold text-godinov-bg mb-4">Layanan</h3>
+              <nav className="flex flex-col gap-3">
+                <FooterLink href="#web-dev">Web Development</FooterLink>
+                <FooterLink href="#ui-ux">UI/UX Design</FooterLink>
+                <FooterLink href="#seo">SEO</FooterLink>
+                <FooterLink href="#maintenance">Maintenance</FooterLink>
+              </nav>
+            </div>
+            
+            {/* --- KOLOM RESOURCES DIHAPUS --- */}
+
+            <div>
+              <h3 className="font-semibold text-godinov-bg mb-4">Kontak</h3>
+              <div className="flex flex-col gap-3 text-godinov-bg/70">
+                <a href="tel:+62123456789" className="flex items-center gap-2.5 hover:text-godinov-bg transition-colors">
+                  <Phone size={16} />
+                  <span>+62 123 456 789</span>
+                </a>
+                <a href="mailto:halo@godinov.com" className="flex items-center gap-2.5 hover:text-godinov-bg transition-colors">
+                  <Mail size={16} />
+                  <span>halo@godinov.com</span>
+                </a>
+                <div className="flex items-start gap-2.5">
+                  <MapPin size={16} className="mt-1" />
+                  <span>Tangerang, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --- Bagian 3: Copyright & Legal --- */}
+        <div className="border-t border-godinov-bg/20 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+          {/* MENGGUNAKAN KOMPONEN PARAGRAPH */}
+          <Paragraph size="sm" className="text-godinov-bg/60 mb-4 md:mb-0">
+            © {new Date().getFullYear()} Godinov — All Rights Reserved.
+          </Paragraph>
+          <div className="flex items-center gap-6">
+            <a href="#privacy" className="text-godinov-bg/60 hover:text-godinov-bg transition-colors">Privacy Policy</a>
+            <a href="#terms" className="text-godinov-bg/60 hover:text-godinov-bg transition-colors">Terms of Use</a>
+            <a href="#sitemap" className="text-godinov-bg/60 hover:text-godinov-bg transition-colors">Site Map</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
