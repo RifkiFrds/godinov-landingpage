@@ -15,7 +15,7 @@
   background: radial-gradient(
       circle at 30% 20%,
       rgba(0, 229, 212, 0.15),
-      transparent 40%
+      transparent 10%
     ),
     var(--godinov-bg);
   position: relative;
@@ -35,7 +35,7 @@
 .bg-godinov-light {
   background: radial-gradient(
       circle at 70% 30%,
-      rgba(0, 229, 212, 0.12),
+      rgba(0, 229, 214, 0.033),
       transparent 55%
     ),
     linear-gradient(
@@ -99,21 +99,16 @@
   content: "";
   position: absolute;
   inset: 0;
-
-  /* ✅ memakai background sama persis seperti .bg-godinov */
   background: radial-gradient(
       circle at 30% 20%,
       rgba(28, 228, 215, 0),
       transparent 40%
     ),
     var(--godinov-bg);
-
-  /* ✅ noise sama */
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 C300,80 900,40 1440,100 L1440,0 L0,0 Z' fill='white'/%3E%3C/svg%3E");
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
 
-  /* ✅ noise overlay */
 }
 .wave-godinov-shape::after {
   content: "";
@@ -123,6 +118,7 @@
   opacity: 0.25; 
   pointer-events: none;
 }
+
 
 @media (max-width: 768px) {
   .wave-godinov-shape {
@@ -138,5 +134,66 @@
     inset: 0;
     background: linear-gradient(to bottom, transparent, #f9faff 60%);
   }
+}
+
+/* ===============================
+   WAVE PENUTUP (REVISI FINAL)
+   =============================== */
+.wave-penutup-shape {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateY(1px); /* Hilangkan garis batas antar section */
+}
+
+.wave-penutup-shape::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 65% 90%,
+      rgba(0, 229, 214, 0),
+      transparent 50%
+    ),
+    var(--godinov-bg);
+
+  /* Mask baru - lebih smooth dan elegan */
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120 L0,60 C360,100 1080,40 1440,90 L1440,120 L0,120 Z' fill=%22white%22/%3E%3C/svg%3E");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+}
+
+.wave-penutup-shape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ===============================
+   RESPONSIVE ADJUSTMENT
+   =============================== */
+@media (max-width: 768px) {
+  .wave-penutup-shape {
+    height: 70px;
+    transform: translateY(9px);
+  }
+
+@media (max-width: 768px) {
+  .wave-godinov-shape::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, #f9faff 60%);
+  }
+}
 }
 

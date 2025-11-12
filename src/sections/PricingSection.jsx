@@ -51,17 +51,17 @@ const packages = [
 
 export default function PricingSection() {
   return (
-    <section id="paket" className="bg-godinov-light py-24 relative overflow-hidden">
+    <section id="paket" className="relative overflow-hidden bg-godinov-light py-24">
 
-      <div className="max-w-6xl mx-auto px-6">
-
+      <div className="relative max-w-6xl mx-auto px-6 z-10">
+        
         {/* Header */}
         <motion.div
           className="text-center max-w-2xl mx-auto mb-16"
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-godinov-bg/5 border border-[#1B0F4E] rounded-full mb-4">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-godinov-bg/5 border border-[#1B0F4E]/10 rounded-full mb-4">
             <Sparkles size={16} className="text-godinov-bg/60" />
             <Paragraph size="sm" className="text-godinov-bg/60 uppercase tracking-wider !m-0">
               Paket Layanan
@@ -82,24 +82,25 @@ export default function PricingSection() {
             <motion.div
               key={i}
               className={`relative rounded-2xl p-7 backdrop-blur-xl cursor-pointer transition-all duration-500
-              ${p.highlight 
-                ? "bg-white/80 border border-godinov-cyan/40 shadow-[0_18px_48px_rgba(0,229,212,0.25)] scale-[1.03]"
-                : "bg-white/60 border border-godinov-bg/10 shadow-sm hover:border-godinov-cyan/40 hover:shadow-[0_18px_48px_rgba(0,229,212,0.18)]"
+              ${
+                p.highlight
+                  ? "bg-white/80 border border-godinov-cyan/40 shadow-[0_18px_48px_rgba(0,229,212,0.25)] scale-[1.03]"
+                  : "bg-white/60 border border-godinov-bg/10 shadow-sm hover:border-godinov-cyan/40 hover:shadow-[0_18px_48px_rgba(0,229,212,0.18)]"
               }`}
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               whileHover={{ translateY: -6 }}
             >
-            {p.highlight && (
-            <div className="absolute -top-4 inset-x-0 flex justify-center">
-                <div className="px-4 py-1.5 text-xs font-medium rounded-full
-                                border border-godinov-cyan/40 bg-godinov-cyan/10 backdrop-blur-md
-                                shadow-[0_4px_12px_rgba(0,229,212,0.35)] text-godinov-bg">
-                ⭐ Best Value
+              {p.highlight && (
+                <div className="absolute -top-4 inset-x-0 flex justify-center">
+                  <div className="px-4 py-1.5 text-xs font-medium rounded-full
+                                  border border-godinov-cyan/40 bg-godinov-cyan/10 backdrop-blur-md
+                                  shadow-[0_4px_12px_rgba(0,229,212,0.35)] text-godinov-bg">
+                    ⭐ Best Value
+                  </div>
                 </div>
-            </div>
-            )}
+              )}
 
               {/* Image */}
               <div className="w-full h-36 flex justify-center mb-6">
@@ -124,7 +125,13 @@ export default function PricingSection() {
               </ul>
 
               {/* CTA */}
-              <Button href="/wa.me/088294799116" variant="primary" radius="lg" size="md" className="flex items-center gap-2 text-godinov-bg/50 hover:text-godinov-cyan transition-all duration-300 font-medium">
+              <Button
+                href="https://wa.me/6288294799116"
+                variant="primary"
+                radius="lg"
+                size="md"
+                className="flex items-center gap-2 font-medium"
+              >
                 Pelajari lebih lanjut
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -132,6 +139,7 @@ export default function PricingSection() {
           ))}
         </div>
       </div>
+      <div className="wave-penutup-shape"></div>
     </section>
   );
 }

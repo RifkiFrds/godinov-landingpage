@@ -48,8 +48,8 @@ export default function Navbar() {
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6">
           <div className="flex items-center justify-between py-3">
 
-            <button onClick={() => handleScroll("#home")} className="flex items-center gap-2 mr-8">
-              <img src={logo} alt="Godinov" className="h-7 w-auto object-contain" />
+            <button onClick={() => handleScroll("#home")} className="flex items-center gap-2 mr-6">
+              <img src={logo} alt="Godinov" className="h-10 w-auto object-contain" />
             </button>
 
             <nav className="hidden md:flex items-center gap-8">
