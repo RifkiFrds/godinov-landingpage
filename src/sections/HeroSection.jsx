@@ -62,7 +62,7 @@ const AnimatedWords = ({ text, className }) => {
 export default function HeroSection() {
   
   return (
-   <section id="home" className="text-godinov-bg relative min-h-[80vh] flex items-center justify-center text-center py-29 overflow-hidden">
+   <section id="home" className="text-godinov-bg relative min-h-[100vh] flex items-center justify-center text-center py-29 overflow-hidden">
 
       <div className="absolute inset-0 z-0">
         <motion.div

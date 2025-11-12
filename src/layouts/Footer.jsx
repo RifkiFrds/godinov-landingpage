@@ -47,7 +47,7 @@ export default function Footer() {
             <img 
               src={logoUrl} 
               alt="Godinov" 
-              className="h-11 mb-4" 
+              className="h-8 mb-4" 
               onError={(e) => e.target.src = 'https://placehold.co/150x40/FFFFFF/1B0F4E?text=Godinov&font=poppins'}
             />
             {/* MENGGUNAKAN KOMPONEN PARAGRAPH */}
