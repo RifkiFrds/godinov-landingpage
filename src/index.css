@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 :root {
-  --godinov-bg: #1B0F4E;
-  --godinov-cyan: #00E5D4;
-  --godinov-light: #F9FAFF;
+  --godinov-bg: #1b0f4e;
+  --godinov-cyan: #00e5d4;
+  --godinov-light: #f9faff;
 }
 
-/* Background dark brand */
+/* ===============================
+   BACKGROUND
+   =============================== */
 .bg-godinov {
   background: radial-gradient(
       circle at 30% 20%,
@@ -31,19 +33,13 @@
   opacity: 0.25;
 }
 
-/* Background brand light */
 .bg-godinov-light {
   background: radial-gradient(
       circle at 70% 30%,
       rgba(0, 229, 214, 0.033),
       transparent 55%
     ),
-    linear-gradient(
-      135deg,
-      #F9FAFF 0%,
-      #EDEFFF 40%,
-      #F9FAFF 100%
-    );
+    linear-gradient(135deg, #f9faff 0%, #edefff 40%, #f9faff 100%);
   color: var(--godinov-bg);
   position: relative;
 }
@@ -57,6 +53,9 @@
   opacity: 0.18;
 }
 
+/* ===============================
+   NAVBAR
+   =============================== */
 .navbar-dark a,
 .navbar-dark button,
 .navbar-dark .logo,
@@ -69,7 +68,6 @@
 .navbar-dark button:hover {
   color: var(--godinov-cyan) !important;
 }
-
 
 .navbar-light a,
 .navbar-light button,
@@ -84,89 +82,88 @@
   color: var(--godinov-cyan) !important;
 }
 
+/* ===============================
+   WAVE ATAS (GODINOV)
+   =============================== */
 .wave-godinov-shape {
   position: absolute;
-  margin-top: -6px;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px;
-  pointer-events: none;
+  height: 140px;
   overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateY(-8px);
 }
 
 .wave-godinov-shape::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at 30% 20%,
-      rgba(28, 228, 215, 0),
-      transparent 40%
-    ),
-    var(--godinov-bg);
-  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 C300,80 900,40 1440,100 L1440,0 L0,0 Z' fill='white'/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
+  background: var(--godinov-bg);
 
+  /* bentuk ombak lebih halus */
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2880 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C360,80 720,0 1080,40 C1440,80 1800,0 2160,40 C2520,80 2880,0 3240,40 L3240,0 L0,0 Z' fill=%22white%22/%3E%3C/svg%3E");
+
+  /* perhatikan mask-size dan repeat */
+  mask-size: 200% 100%;
+  mask-repeat: repeat-x;
+  animation: waveMove 10s linear infinite;
 }
+
 .wave-godinov-shape::after {
   content: "";
   position: absolute;
   inset: 0;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.25; 
+  opacity: 0.25;
   pointer-events: none;
 }
 
-
-@media (max-width: 768px) {
-  .wave-godinov-shape {
-    height: 70px;        /* lebih pendek */
-    transform: translateY(-10px); /* dorong wave sedikit naik */
-  }
-}
-
-@media (max-width: 768px) {
-  .wave-godinov-shape::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent, #f9faff 60%);
-  }
-}
-
 /* ===============================
-   WAVE PENUTUP (REVISI FINAL)
+   WAVE PENUTUP (BAWAH)
    =============================== */
 .wave-penutup-shape {
   position: absolute;
   bottom: 0;
-  margin-bottom: -6px;
   left: 0;
   width: 100%;
-  height: 120px;
-  pointer-events: none;
+  height: 140px;
   overflow: hidden;
-  transform: translateY(1px); /* Hilangkan garis batas antar section */
+  pointer-events: none;
+  transform: translateY(7px); /* Sedikit penyesuaian untuk anti-aliasing */
+  z-index: 1;
 }
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* * CATATAN: Aturan .wave-pentup-shape (TYPO) telah dihapus.
+ * Aturan tersebut juga menggunakan position: relative
+ * yang akan merusak .wave-penutup-shape.
+ */
+
+/* * CATATAN: Aturan untuk .wave-godinov-shape::before, .wave-penutup-shape::before 
+ * yang berisi 'margin: -8px' telah dihapus.
+ * Margin tersebut menyebabkan pseudo-element 'bocor' dari containernya.
+ */
 
 .wave-penutup-shape::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-      circle at 65% 90%,
-      rgba(0, 229, 214, 0),
-      transparent 50%
-    ),
-    var(--godinov-bg);
+  background: var(--godinov-bg);
 
-  /* Mask baru - lebih smooth dan elegan */
-  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,120 L0,60 C360,100 1080,40 1440,90 L1440,120 L0,120 Z' fill=%22white%22/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
+  /* bentuk ombak lebih lembut */
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2880 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 C360,40 720,120 1080,80 C1440,40 1800,120 2160,80 C2520,40 2880,120 3240,80 L3240,120 L0,120 Z' fill=%22white%22/%3E%3C/svg%3E");
+
+  mask-size: 200% 100%;
+  mask-repeat: repeat-x;
   mask-position: bottom;
+  animation: waveMoveReverse 12s linear infinite;
 }
 
 .wave-penutup-shape::after {
@@ -179,21 +176,45 @@
 }
 
 /* ===============================
-   RESPONSIVE ADJUSTMENT
+   ANIMASI OMBANG SMOOTH TANPA PUTUS
+   =============================== */
+@keyframes waveMove {
+  0% {
+    mask-position: 0 0;
+  }
+  100% {
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes waveMoveReverse {
+  0% {
+    mask-position: 100% 0;
+  }
+  100% {
+    mask-position: 0 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE (Mobile)
    =============================== */
 @media (max-width: 768px) {
+  .wave-godinov-shape {
+    height: 60px;
+    transform: translateY(-10px); /* biar nempel banget */
+    /* * CATATAN: margin-bottom: 100px dihapus. 
+     * Margin pada elemen 'position: absolute' tidak akan mendorong
+     * konten lain. Anda mungkin perlu 'padding-top' pada
+     * konten di bawah wave ini.
+     */
+  }
+
   .wave-penutup-shape {
-    height: 70px;
-    transform: translateY(9px);
-  }
-
-@media (max-width: 768px) {
-  .wave-godinov-shape::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent, #f9faff 60%);
+    height: 60px;
+    /* 'margin-top: -1px' dihapus karena 'transform: translateY(1px)' 
+     * pada aturan dasarnya sudah cukup.
+     */
+    transform: translateY(10px);
   }
 }
-}
-
