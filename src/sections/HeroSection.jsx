@@ -20,7 +20,7 @@ const AnimatedStat = ({ value, label }) => {
       <Heading size="h2" className="text-godinov-bg">
         <motion.span>{displayValue}</motion.span>+
       </Heading>
-      <Paragraph size="sm" className="text-godinov-bg/70 mt-1">
+      <Paragraph size="sm" className="text-godinov-bg/70 mt-2">
         {label}
       </Paragraph>
     </div>
