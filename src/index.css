@@ -94,7 +94,7 @@
   overflow: hidden;
   pointer-events: none;
   z-index: 1;
-  transform: translateY(-8px);
+  transform: translateY(-20px);
 }
 
 .wave-godinov-shape::before {
@@ -102,11 +102,7 @@
   position: absolute;
   inset: 0;
   background: var(--godinov-bg);
-
-  /* bentuk ombak lebih halus */
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2880 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,40 C360,80 720,0 1080,40 C1440,80 1800,0 2160,40 C2520,80 2880,0 3240,40 L3240,0 L0,0 Z' fill=%22white%22/%3E%3C/svg%3E");
-
-  /* perhatikan mask-size dan repeat */
   mask-size: 200% 100%;
   mask-repeat: repeat-x;
   animation: waveMove 10s linear infinite;
@@ -132,7 +128,7 @@
   height: 140px;
   overflow: hidden;
   pointer-events: none;
-  transform: translateY(7px); /* Sedikit penyesuaian untuk anti-aliasing */
+  transform: translateY(20px); 
   z-index: 1;
 }
 
@@ -141,25 +137,12 @@ section {
   padding: 0;
 }
 
-/* * CATATAN: Aturan .wave-pentup-shape (TYPO) telah dihapus.
- * Aturan tersebut juga menggunakan position: relative
- * yang akan merusak .wave-penutup-shape.
- */
-
-/* * CATATAN: Aturan untuk .wave-godinov-shape::before, .wave-penutup-shape::before 
- * yang berisi 'margin: -8px' telah dihapus.
- * Margin tersebut menyebabkan pseudo-element 'bocor' dari containernya.
- */
-
 .wave-penutup-shape::before {
   content: "";
   position: absolute;
   inset: 0;
   background: var(--godinov-bg);
-
-  /* bentuk ombak lebih lembut */
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2880 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 C360,40 720,120 1080,80 C1440,40 1800,120 2160,80 C2520,40 2880,120 3240,80 L3240,120 L0,120 Z' fill=%22white%22/%3E%3C/svg%3E");
-
   mask-size: 200% 100%;
   mask-repeat: repeat-x;
   mask-position: bottom;
@@ -202,19 +185,11 @@ section {
 @media (max-width: 768px) {
   .wave-godinov-shape {
     height: 60px;
-    transform: translateY(-10px); /* biar nempel banget */
-    /* * CATATAN: margin-bottom: 100px dihapus. 
-     * Margin pada elemen 'position: absolute' tidak akan mendorong
-     * konten lain. Anda mungkin perlu 'padding-top' pada
-     * konten di bawah wave ini.
-     */
+    transform: translateY(-16px); 
   }
 
   .wave-penutup-shape {
     height: 60px;
-    /* 'margin-top: -1px' dihapus karena 'transform: translateY(1px)' 
-     * pada aturan dasarnya sudah cukup.
-     */
-    transform: translateY(10px);
+    transform: translateY(16px);
   }
 }
