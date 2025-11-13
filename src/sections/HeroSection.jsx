@@ -62,7 +62,7 @@ const AnimatedWords = ({ text, className }) => {
 export default function HeroSection() {
   
   return (
-   <section id="home" className="text-godinov-bg relative min-h-[100vh] flex items-center justify-center text-center py-29 overflow-hidden">
+   <section id="home" className="text-godinov-bg relative min-h-[100vh] flex items-center justify-center text-center overflow-hidden">
 
       <div className="absolute inset-0 z-0">
         <motion.div
@@ -104,7 +104,7 @@ export default function HeroSection() {
             variant="primary"
             size="lg"
             radius="full"
-            className="gap-2 group w-full sm:w-auto"
+            className="gap-2 group sm:w-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -120,7 +120,7 @@ export default function HeroSection() {
             variant="secondary"
             size="lg"
             radius="full"
-            className="gap-2 group w-full sm:w-auto"
+            className="gap-2 group sm:w-auto"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >

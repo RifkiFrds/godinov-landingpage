@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Heading, Paragraph } from "../components/ui/Text";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/Button";
-import bronzeImg from "../assets/images/bronze.png";
-import silverImg from "../assets/images/silver.png";
-import goldImg from "../assets/images/gold.png";
+import bronzeImg from "../assets/images/pricing/bronze.png";
+import silverImg from "../assets/images/pricing/silver.png";
+import goldImg from "../assets/images/pricing/gold.png";
 
 const packages = [
   {

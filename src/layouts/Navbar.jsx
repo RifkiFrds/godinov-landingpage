@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <header className={`navbar fixed top-6 left-0 right-0 z-50 flex justify-center px-4 ${navbarLight ? "navbar-light" : "navbar-dark"}`}>
-      <div className="relative w-100 max-w-4xl md:w-fit">
+      <div className="relative w-100 max-w-4xl w-85 md:w-fit">
 
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6">
           <div className="flex items-center justify-between py-3">
