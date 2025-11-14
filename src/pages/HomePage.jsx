@@ -5,6 +5,7 @@ import AboutSection from '../sections/AboutSection';
 import ServiceSection from '../sections/ServiceSection';
 import PricingSection from '../sections/PricingSection';
 import {PortfolioSection} from "../sections/PortfolioSection";
+import ContactSection from "../sections/ContactSection";
 
 function HomePage(){
 	return (
@@ -15,6 +16,7 @@ function HomePage(){
       <ServiceSection />
       <PricingSection />
       <PortfolioSection />
+      <ContactSection />
     </>
   );
 }
