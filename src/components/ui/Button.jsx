@@ -32,13 +32,16 @@ const buttonVariants = cva(
   }
 )
 
-export function Button({ className, variant, size, radius, children, ...props }) {
+export function Button({ className, variant, size, radius, children, href, ...props }) {
+  const Component = href ? "a" : "button";
+
   return (
-    <button
+    <Component
       className={cn(buttonVariants({ variant, size, radius }), className)}
+      href={href}
       {...props}
     >
       {children}
-    </button>
-  )
+    </Component>
+  );
 }

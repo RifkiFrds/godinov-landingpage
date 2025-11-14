@@ -115,6 +115,7 @@ export default function ContactSection() {
               <div className="col-span-2 md:col-span-1">
                 <Input
                   label="Phone Number"
+                  type="tel"
                   name="contact"
                   value={form.contact}
                   onChange={handleChange}

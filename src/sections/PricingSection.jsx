@@ -124,12 +124,14 @@ export default function PricingSection() {
               {/* CTA */}
               <Button
                 href="https://wa.me/6288294799116"
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="primary"
                 radius="lg"
                 size="md"
                 className="flex items-center gap-2 font-medium"
               >
-                Pelajari lebih lanjut
+                Konsultasi Gratis Sekarang
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
