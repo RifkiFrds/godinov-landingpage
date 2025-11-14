@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Input from "../components/ui/Input";
 import Textarea from "../components/ui/Textarea";
 import { sendInbox } from "../api/inbox";
-import { toast } from "react-toastify";
 import { Phone, Mail, MapPin } from "lucide-react";
 import SuccessModal from "../components/ui/SuccessModal";
 
@@ -50,7 +49,6 @@ export default function ContactSection() {
       });
     } catch (err) {
       console.error(err);
-      toast.error("Gagal mengirim pesan. Coba lagi.");
     }
 
     setLoading(false);

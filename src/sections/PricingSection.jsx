@@ -3,13 +3,10 @@ import { motion } from "framer-motion";
 import { Heading, Paragraph } from "../components/ui/Text";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/Button";
-import bronzeImg from "../assets/images/pricing/bronze.png";
-import silverImg from "../assets/images/pricing/silver.png";
-import goldImg from "../assets/images/pricing/gold.png";
 
 const packages = [
   {
-    image: bronzeImg,
+    image: "/images/pricing/bronze.png",
     title: "Bronze",
     price: "Rp 500K – 1 Juta",
     desc: "Cocok untuk UMKM atau personal brand yang ingin mulai tampil profesional.",
@@ -22,7 +19,7 @@ const packages = [
     highlight: false
   },
   {
-    image: silverImg,
+    image: "/images/pricing/silver.png",
     title: "Silver",
     price: "Rp 1.1 – 3 Juta",
     desc: "Paket ideal untuk bisnis yang ingin tampilan lebih serius dan siap scale.",
@@ -35,7 +32,7 @@ const packages = [
     highlight: true
   },
   {
-    image: goldImg,
+    image: "/images/pricing/gold.png",
     title: "Gold",
     price: "Custom / Negosiasi",
     desc: "Solusi premium dengan fitur dan sistem sesuai kebutuhan Anda.",
@@ -104,7 +101,7 @@ export default function PricingSection() {
 
               {/* Image */}
               <div className="w-full h-36 flex justify-center mb-6">
-                <img src={p.image} alt={p.title} className="h-full object-contain drop-shadow-md" />
+                <img src={p.image} alt={p.title} className="h-full object-contain drop-shadow-md" loading="lazy" />
               </div>
 
               {/* Title + Price */}

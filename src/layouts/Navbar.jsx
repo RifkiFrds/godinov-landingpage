@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../components/ui/Button";
-import logo from "../assets/images/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -49,7 +48,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3">
 
             <button onClick={() => handleScroll("#home")} className="flex items-center gap-2 mr-6">
-              <img src={logo} alt="Godinov" className="h-8 w-auto object-contain" />
+              <img src="/images/logo.png" alt="Godinov" className="h-8 w-auto object-contain" loading="lazy" />
             </button>
 
             <nav className="hidden md:flex items-center gap-8">

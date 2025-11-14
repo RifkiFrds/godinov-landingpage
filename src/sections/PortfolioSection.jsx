@@ -3,12 +3,6 @@ import { Heading, Paragraph } from "../components/ui/Text";
 import { ParallaxScroll } from "../components/ParallaxScroll";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
-import gocari from "../assets/images/portfolio/gocari.png";
-import bantenstory from "../assets/images/portfolio/bantenstory.png";
-import himti from "../assets/images/portfolio/himti.png";
-import kelbelajar from "../assets/images/portfolio/kelbelajar.png";
-import naikkelas from "../assets/images/portfolio/naikkelas.png";
-import satsetai from "../assets/images/portfolio/satsetai.png";
 
     const myProjects = [
       {
@@ -16,44 +10,45 @@ import satsetai from "../assets/images/portfolio/satsetai.png";
         description:
           "Platform komunitas digital untuk edukasi, UMKM, dan kemanusiaan di Kota Tangerang. Menyediakan konten belajar gratis, dukungan digitalisasi UMKM, hingga distribusi bantuan sosial transparan berbasis teknologi Next.js & Supabase.",
         link: "http://gocari-id.netlify.app/",
-        images: gocari,
+        images: "/images/portfolio/gocari.png",
       },
       {
         title: "HIMTI Website Revamp",
         description:
           "Redesain website resmi HIMTI UMT dengan tampilan modern dan fitur lengkap: info acara, pendaftaran lomba, kelompok belajar, data dosen pembina, serta dokumentasi kegiatan. Dibangun dengan React Vite & Tailwind, backend Express API.",
         link: "https://web-himtiumt.vercel.app/",
-        images: himti,
+        images: "/images/portfolio/himti.png",
       },
       {
         title: "SATSET AI — Productivity Web App",
         description:
           "Aplikasi AI untuk membantu mahasiswa menyelesaikan tugas lebih cepat. Menyediakan ChatBot AI, generator kerangka makalah, dan ringkasan jurnal instan. Dibangun dengan JS + Tailwind + Vite + Netlify Serverless & PWA support.",
         link: "https://satset-ai.netlify.app/",
-        images: satsetai,
+        images: "/images/portfolio/satsetai.png",
       },
       {
         title: "HIMTI Learning Group + HIMTIChat AI",
         description:
           "Platform komunitas belajar modern dengan integrasi AI berbasis IBM Granite. Dilengkapi PWA, animasi interaktif, filter mentor dinamis, riwayat chat pintar, voice input, dan export percakapan. Dibuat sebagai SPA React yang sangat optimal.",
         link: "https://kelompok-belajar-himti.netlify.app/",
-        images: kelbelajar,
+        images: "/images/portfolio/kelbelajar.png",
       },
       {
         title: "NaikKelas — Dashboard Perusahaan Trading",
         description:
           "Dashboard administrasi untuk mengelola konten dinamis, profil perusahaan, dan lowongan kerja. Menggunakan React di frontend dan Laravel API sebagai backend untuk pengelolaan data yang solid dan aman.",
         link: "https://naikkelas-dashboard.netlify.app/",
-        images: naikkelas,
+        images: "/images/portfolio/naikkelas.png",
       },
       {
         title: "Banten Storyteller — Progressive Web App",
         description:
           "PWA modern yang menampilkan cerita inspiratif masyarakat Banten melalui teknologi peta interaktif. Memiliki fitur offline penuh, application shell caching, background sync, dan pengalaman seperti aplikasi native.",
         link: "https://bantenstoryteller.netlify.app/",
-        images: bantenstory,
+        images: "/images/portfolio/bantenstory.png",
       },
     ];
+
     
 export const PortfolioSection = () => {
   return (

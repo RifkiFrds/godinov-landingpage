@@ -8,4 +8,15 @@ export default defineConfig({
     react,
     tailwindcss()
   ],
-})
+    build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          framer: ["framer-motion"],
+          lottie: ["react-lottie-player"],
+          lucide: ["lucide-react"],
+        },
+      },
+    },
+  },
+});

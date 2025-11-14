@@ -25,7 +25,6 @@
   animation: fadeInScale 0.25s ease-out forwards;
 }
 
-
 /* ===============================
    BACKGROUND
    =============================== */
@@ -45,8 +44,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.25;
+
+  /* GRAIN PNG SUPER RINGAN */
+  background: url("/grain.png");
+  background-size: 20px 20px;
+  opacity: 0.12;
 }
 
 .bg-godinov-light {
@@ -65,8 +67,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.18;
 }
 
 /* ===============================
@@ -99,8 +99,8 @@
 }
 
 /* ===============================
-   WAVE ATAS (GODINOV)
-   =============================== */
+   WAVE ATAS
+   =============================== */
 .wave-godinov-shape {
   position: absolute;
   top: 0;
@@ -127,16 +127,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  background-repeat: repeat;
-  opacity: 0.25;
-  background-size: 160px;
-  filter: blur(0.2px);
   pointer-events: none;
 }
 
 /* ===============================
-   WAVE PENUTUP (BAWAH)
+   WAVE PENUTUP
    =============================== */
 .wave-penutup-shape {
   position: absolute;
@@ -146,13 +141,8 @@
   height: 140px;
   overflow: hidden;
   pointer-events: none;
-  transform: translateY(20px); 
+  transform: translateY(20px);
   z-index: 1;
-}
-
-section {
-  margin: 0;
-  padding: 0;
 }
 
 .wave-penutup-shape::before {
@@ -163,18 +153,18 @@ section {
   mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2880 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 C360,40 720,120 1080,80 C1440,40 1800,120 2160,80 C2520,40 2880,120 3240,80 L3240,120 L0,120 Z' fill=%22white%22/%3E%3C/svg%3E");
   mask-size: 200% 100%;
   mask-repeat: repeat-x;
-  mask-position: bottom;
 }
 
 .wave-penutup-shape::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.12;
   pointer-events: none;
 }
 
+/* ===============================
+   WAVE GODINOV BAWAH
+   =============================== */
 .wave-godinov-shape-bawah {
   position: absolute;
   top: 0;
@@ -201,48 +191,17 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://grainy-gradients.vercel.app/noise.svg");
-  background-repeat: repeat;
-  opacity: 0.10;
-  background-size: 100px;
-  filter: blur(0.2px);
   pointer-events: none;
 }
 
 /* ===============================
-   ANIMASI OMBANG SMOOTH TANPA PUTUS
-   =============================== */
-@keyframes waveMove {
-  0% {
-    mask-position: 0 0;
-  }
-  100% {
-    mask-position: 100% 0;
-  }
-}
-
-@keyframes waveMoveReverse {
-  0% {
-    mask-position: 100% 0;
-  }
-  100% {
-    mask-position: 0 0;
-  }
-}
-
-/* ===============================
-   RESPONSIVE (Mobile)
+   RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
-  .wave-godinov-shape {
+  .wave-godinov-shape,
+  .wave-godinov-shape-bawah {
     height: 60px;
-    transform: translateY(-16px); 
-  }
-
-  .wave-godinov-shape-bawah
-   {
-    height: 60px;
-    transform: translateY(-16px); 
+    transform: translateY(-16px);
   }
 
   .wave-penutup-shape {

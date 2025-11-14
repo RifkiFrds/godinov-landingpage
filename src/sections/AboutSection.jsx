@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import LottiePlayer from 'react-lottie-player'; 
-import aboutIllustration from "../assets/animation/about-illustration.json"; 
+import LottiePlayer from 'react-lottie-player';  
 import { Heading, Paragraph } from "../components/ui/Text"; 
 import {  
   Zap,         
@@ -100,7 +99,7 @@ export default function AboutSection() {
           <div className="absolute -inset-16 bg-gradient-to-tr from-[#00E5D4]/40 via-[#6AFBF0]/20 to-transparent blur-[90px] rounded-full pointer-events-none" />
 
           <LottiePlayer
-            animationData={aboutIllustration}
+            path="/lottie/about-illustration.json"
             loop
             play
             className="relative drop-shadow-[0_10px_40px_rgba(0,229,212,0.35)]"

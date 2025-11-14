@@ -7,7 +7,6 @@ import {
   Phone, 
   MapPin 
 } from "lucide-react";
-import logoUrl from "../assets/images/logo.png"; // Menggunakan import Anda
 import { Heading, Paragraph } from "../components/ui/Text"; 
 
 // Helper Component kecil untuk link
@@ -45,10 +44,11 @@ export default function Footer() {
           {/* Kolom Kiri: Logo, Tagline, Sosial */}
           <div className="md:col-span-4 lg:col-span-5">
             <img 
-              src={logoUrl} 
+              src="/images/logo.png" 
               alt="Godinov" 
               className="h-8 mb-4" 
               onError={(e) => e.target.src = 'https://placehold.co/150x40/FFFFFF/1B0F4E?text=Godinov&font=poppins'}
+              loading="lazy"
             />
             {/* MENGGUNAKAN KOMPONEN PARAGRAPH */}
             <Paragraph 

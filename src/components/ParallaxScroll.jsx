@@ -38,6 +38,7 @@ export const ParallaxScroll = ({ projects, className }) => {
           src={project.images}
           alt={project.title}
           className="w-full h-[22rem] md:h-[24rem] xl:h-[26rem] object-cover rounded-3xl transition-transform duration-500 group-hover:scale-[1.04]"
+          loading="lazy"
         />
 
         {/* Efek glass reflection */}
