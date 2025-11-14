@@ -61,10 +61,10 @@ export default function ContactSection() {
         <div className="wave-godinov-shape-bawah"></div>
 
         {/* Container Besar */}
-        <div className="bg-white shadow-xl rounded-3xl grid md:grid-cols-[32%,1fr] overflow-hidden">
+        <div className="bg-white shadow-xl rounded-3xl grid md:grid-cols-3 overflow-hidden">
 
           {/* --- Left: Contact Information Card (Godinov Blue) --- */}
-          <div className="bg-godinov p-10 text-white flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-godinov p-10 text-white flex flex-col justify-between relative overflow-hidden md:col-span-1">
 
             <div>
               <h3 className="text-xl font-semibold mb-3">Contact Information</h3>
@@ -84,7 +84,7 @@ export default function ContactSection() {
           </div>
 
           {/* --- Right: Form Section --- */}
-          <div className="p-10 bg-white text-godinov">
+          <div className="p-10 bg-white text-godinov md:col-span-2">
             <h3 className="text-2xl font-semibold mb-6 text-godinov">
               Get In Touch
             </h3>
