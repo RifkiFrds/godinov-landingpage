@@ -57,25 +57,24 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-godinov-light px-4">
       <div className="max-w-6xl mx-auto">
-
         <div className="wave-godinov-shape-bawah"></div>
 
         {/* Container Besar */}
         <div className="bg-white shadow-xl rounded-3xl grid md:grid-cols-3 overflow-hidden">
-
           {/* --- Left: Contact Information Card (Godinov Blue) --- */}
           <div className="bg-godinov p-10 text-white flex flex-col justify-between relative overflow-hidden md:col-span-1">
-
             <div>
-              <h3 className="text-xl font-semibold mb-3">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                Contact Information
+              </h3>
               <p className="text-white/85 text-sm leading-relaxed">
                 Kami siap membantu keperluan digital kamu—website, dashboard,
                 sistem informasi, dan konsultasi bisnis teknologi.
               </p>
 
               <div className="mt-8 space-y-5">
-                <InfoItem icon={Phone} text="+62 812-3456-7890" />
-                <InfoItem icon={Mail} text="support@godinov.com" />
+                <InfoItem icon={Phone} text="+62 838-4566-3345" />
+                <InfoItem icon={Mail} text="godinov.id@gmail.com" />
                 <InfoItem icon={MapPin} text="Tangerang, Indonesia" />
               </div>
             </div>
@@ -90,7 +89,6 @@ export default function ContactSection() {
             </h3>
 
             <form className="grid md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
-
               <div className="col-span-2 md:col-span-1">
                 <Input
                   label="Your Name"
@@ -171,7 +169,6 @@ export default function ContactSection() {
                   {loading ? "Sending..." : "Send Message"}
                 </button>
               </div>
-
             </form>
           </div>
 
@@ -180,7 +177,6 @@ export default function ContactSection() {
       </div>
       <SuccessModal open={openSuccess} onClose={() => setOpenSuccess(false)} />
     </section>
-    
   );
 }
 

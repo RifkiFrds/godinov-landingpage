@@ -116,7 +116,7 @@ export default function HeroSection() {
 
           <Button
             as={motion.a}
-            href="mailto:halo@godinov.com"
+            href="#contact"
             variant="secondary"
             size="lg"
             radius="full"

@@ -41,14 +41,24 @@ export default function Navbar() {
 
 
   return (
-    <header className={`navbar fixed top-6 left-0 right-0 z-50 flex justify-center px-4 ${navbarLight ? "navbar-light" : "navbar-dark"}`}>
+    <header
+      className={`navbar fixed top-6 left-0 right-0 z-50 flex justify-center px-4 ${
+        navbarLight ? "navbar-light" : "navbar-dark"
+      }`}
+    >
       <div className="relative w-100 max-w-4xl w-85 md:w-fit">
-
         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6">
           <div className="flex items-center justify-between py-3">
-
-            <button onClick={() => handleScroll("#home")} className="flex items-center gap-2 mr-6">
-              <img src="/images/logo.png" alt="Godinov" className="h-8 w-auto object-contain" loading="lazy" />
+            <button
+              onClick={() => handleScroll("#home")}
+              className="flex items-center gap-2 mr-6"
+            >
+              <img
+                src="/images/logo.png"
+                alt="Godinov"
+                className="h-8 w-auto object-contain"
+                loading="lazy"
+              />
             </button>
 
             <nav className="hidden md:flex items-center gap-8">
@@ -62,8 +72,15 @@ export default function Navbar() {
                 </button>
               ))}
 
-              <Button variant="primary" radius="full" size="md">
-               Konsultasi Gratis
+              <Button
+                href="https://wa.me/6283845663345"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                radius="full"
+                size="md"
+              >
+                Konsultasi Gratis
               </Button>
             </nav>
 
@@ -73,7 +90,6 @@ export default function Navbar() {
             >
               {open ? "✕" : "☰"}
             </button>
-
           </div>
         </div>
 
@@ -82,18 +98,25 @@ export default function Navbar() {
             {navItems.map((item) => (
               <button
                 key={item.href}
-                onClick={() => { handleScroll(item.href); setOpen(false); }}
+                onClick={() => {
+                  handleScroll(item.href);
+                  setOpen(false);
+                }}
                 className="block w-full text-left text-white/85 hover:text-[#00E5D4] transition-colors font-poppins py-2"
               >
                 {item.label}
               </button>
             ))}
-            <Button variant="primary" radius="full" size="md" className="w-full mt-2">
+            <Button
+              variant="primary"
+              radius="full"
+              size="md"
+              className="w-full mt-2"
+            >
               Konsultasi Gratis
             </Button>
           </div>
         )}
-
       </div>
     </header>
   );

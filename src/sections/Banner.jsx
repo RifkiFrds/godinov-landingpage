@@ -1,28 +1,34 @@
 import React from "react";
 import { motion} from "framer-motion";
 import Marquee from "react-fast-marquee"; 
-import { 
-  SiReact, 
-  SiNodedotjs, 
-  SiLaravel, 
-  SiFigma, 
-  SiVercel, 
-  SiTailwindcss, 
-  SiShopify,
-  SiFramer
+import {
+  SiReact,
+  SiNodedotjs,
+  SiLaravel,
+  SiCodeigniter,
+  SiExpress,
+  SiNextdotjs,
+  SiFigma,
+  SiVercel,
+  SiTailwindcss,
+  SiNetlify,
+  SiFramer,
 } from "react-icons/si"; 
 import { Heading, Paragraph } from "../components/ui/Text"; 
 import { Cpu } from "lucide-react"; 
 
 const techLogos = [
+  { icon: SiNodedotjs, name: "Node.JS" },
   { icon: SiReact, name: "React" },
-  { icon: SiNodedotjs, name: "Node.js" },
-  { icon: SiLaravel, name: "Laravel"},
+  { icon: SiExpress, name: "Express.JS" },
+  { icon: SiNextdotjs, name: "Next.JS" },
+  { icon: SiLaravel, name: "Laravel" },
+  { icon: SiCodeigniter, name: "CodeIgniter" },
+  { icon: SiTailwindcss, name: "Tailwind CSS" },
   { icon: SiFigma, name: "Figma" },
   { icon: SiVercel, name: "Vercel" },
-  { icon: SiTailwindcss, name: "Tailwind CSS" },
   { icon: SiFramer, name: "Framer" },
-  { icon: SiShopify, name: "Shopify" },
+  { icon: SiNetlify, name: "Netlify" },
 ];
 
 export default function Banner() {

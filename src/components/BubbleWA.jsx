@@ -20,7 +20,6 @@ export default function BubbleWA() {
 
   return (
     <div className="fixed bottom-6 right-6 z-[9999] flex items-end gap-3">
-
       {/* LOOPING TEXT BUBBLE */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -37,7 +36,7 @@ export default function BubbleWA() {
 
       {/* WA BUTTON */}
       <motion.a
-        href="https://wa.me/6281234567890"
+        href="https://wa.me/6283845663345"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.08 }}
@@ -46,14 +45,13 @@ export default function BubbleWA() {
                    shadow-[0_8px_35px_rgba(0,229,212,0.45)] hover:shadow-[0_8px_45px_rgba(0,229,212,0.7)]
                    transition-all duration-300"
       >
-        <img 
-    src="/images/logo-wa.png"
-    alt="WhatsApp" 
-    className="w-12 h-12 object-contain"
-    loading="lazy"
-  />
+        <img
+          src="/images/logo-wa.png"
+          alt="WhatsApp"
+          className="w-12 h-12 object-contain"
+          loading="lazy"
+        />
       </motion.a>
-
     </div>
   );
 }

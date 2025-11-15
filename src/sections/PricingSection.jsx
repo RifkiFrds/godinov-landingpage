@@ -123,7 +123,7 @@ export default function PricingSection() {
 
               {/* CTA */}
               <Button
-                href="https://wa.me/6288294799116"
+                href="https://wa.me/6283845663345"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
