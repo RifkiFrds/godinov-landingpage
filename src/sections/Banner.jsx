@@ -9,9 +9,7 @@ import {
   SiExpress,
   SiNextdotjs,
   SiFigma,
-  SiVercel,
   SiTailwindcss,
-  SiNetlify,
   SiFramer,
 } from "react-icons/si"; 
 import { Heading, Paragraph } from "../components/ui/Text"; 
@@ -26,9 +24,7 @@ const techLogos = [
   { icon: SiCodeigniter, name: "CodeIgniter" },
   { icon: SiTailwindcss, name: "Tailwind CSS" },
   { icon: SiFigma, name: "Figma" },
-  { icon: SiVercel, name: "Vercel" },
   { icon: SiFramer, name: "Framer" },
-  { icon: SiNetlify, name: "Netlify" },
 ];
 
 export default function Banner() {
