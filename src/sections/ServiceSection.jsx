@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -12,7 +12,7 @@ import {
   ArrowRight
 } from "lucide-react";
 
-// --- DATA LAYANAN (dengan tagline baru) ---
+// --- DATA LAYANAN ---
 const services = [
   {
     icon: Code,
@@ -41,7 +41,7 @@ const services = [
 ];
 
 
-// --- CARD KOMPONEN BARU (lebih premium) ---
+// --- CARD KOMPONEN ---
 const ServiceCard = ({ icon: Icon, title, tagline, desc }) => (
   <motion.div
     className="group relative p-7 rounded-2xl border border-godinov-bg/10 bg-white/60 backdrop-blur-xl shadow-sm
@@ -51,7 +51,6 @@ const ServiceCard = ({ icon: Icon, title, tagline, desc }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.4 }}
   >
-    {/* ICON BADGE */}
     <div className="mb-6 w-14 h-14 rounded-xl flex items-center justify-center
                     bg-gradient-to-br from-godinov-cyan/20 to-godinov-bg/10 
                     border border-godinov-cyan/30 backdrop-blur
@@ -59,25 +58,21 @@ const ServiceCard = ({ icon: Icon, title, tagline, desc }) => (
       <Icon size={26} />
     </div>
 
-    {/* TITLE */}
     <h3 className="text-xl font-semibold text-godinov-bg tracking-tight mb-1">
       {title}
     </h3>
 
-    {/* TAGLINE */}
     <p className="text-godinov-cyan/80 text-sm font-medium mb-3">
       {tagline}
     </p>
 
-    {/* DESCRIPTION */}
     <Paragraph className="text-godinov-bg/70 leading-relaxed mb-6">
       {desc}
     </Paragraph>
 
-    {/* CTA */}
     <div className="flex items-center gap-2 text-godinov-bg/40 group-hover:text-godinov-cyan 
                     transition-all duration-300">
-      <span className="text-sm font-medium">Pelajari lebih lanjut</span>
+      <a href="https://wa.me/6283845663345" target="_blank" className="text-sm font-medium">Minta Penawaran Sekarang</a>
       <ArrowRight 
         size={18}
         className="transform group-hover:translate-x-1 transition-all duration-300" 
@@ -89,7 +84,20 @@ const ServiceCard = ({ icon: Icon, title, tagline, desc }) => (
 
 // --- MAIN SECTION ---
 export default function ServiceSection() {
-  const [emblaRef] = useEmblaCarousel({ align: "start", dragFree: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", dragFree: true });
+
+  // === AUTO-SCROLL HINT (Sekali saat load) ===
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setTimeout(() => {
+      emblaApi.scrollTo(1, true); // Scroll ke kartu kedua
+      setTimeout(() => {
+        emblaApi.scrollTo(0, true); // Balik ke awal
+      }, 1200); // Durasi tampilan 'hint'
+    }, 800); // Delay muncul setelah load
+  }, [emblaApi]);
+
 
   return (
     <section id="services" className="bg-godinov-light -mt-px py-20 md:py-32 relative overflow-hidden">
@@ -123,15 +131,19 @@ export default function ServiceSection() {
 
 
         {/* MOBILE CAROUSEL */}
-        <div className="md:hidden" ref={emblaRef}>
-          <div className="flex gap-5 pr-6">
+        <div className="md:hidden relative overflow-x-auto scrollbar-hide" ref={emblaRef}>
+          <div className="flex gap-5 px-1">
             {services.map((s, i) => (
-              <div key={i} className="min-w-[85%]">
+              <div key={i} className="flex-[0_0_90%]">
                 <ServiceCard {...s} />
               </div>
             ))}
           </div>
+
+          {/* Subtle gradient hint (opsional) */}
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-godinov-light to-transparent"></div>
         </div>
+
 
         {/* DESKTOP GRID */}
         <div className="hidden md:grid grid-cols-2 gap-8">
