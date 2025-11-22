@@ -44,9 +44,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-
-  /* GRAIN PNG SUPER RINGAN */
-  background: url("/grain.png");
   background-size: 20px 20px;
   opacity: 0.12;
 }
