@@ -13,9 +13,9 @@ import { Sparkles } from "lucide-react";
         images: "/images/portfolio/gocari.png",
       },
       {
-        title: "HIMTI Website Revamp",
+        title: "HIMTI Official Website Development",
         description:
-          "Redesain website resmi HIMTI UMT dengan tampilan modern dan fitur lengkap: info acara, pendaftaran lomba, kelompok belajar, data dosen pembina, serta dokumentasi kegiatan. Dibangun dengan React Vite & Tailwind, backend Express API.",
+          "Pembuatan website resmi HIMTI UMT dengan tampilan modern dan fitur lengkap: informasi acara, pendaftaran lomba, kelompok belajar, data dosen pembina, dan dokumentasi kegiatan. Dibangun menggunakan React Vite, Tailwind CSS, dan Express API.",
         link: "https://web-himtiumt.vercel.app/",
         images: "/images/portfolio/himti.png",
       },
