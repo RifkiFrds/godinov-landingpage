@@ -60,7 +60,7 @@ export default function Footer() {
               cepat, dan terarah.
             </Paragraph>
             <div className="flex items-center gap-5 mt-6">
-              <SocialIcon href="https://www.instagram.com/godinov.id/" target="_blank" icon={Instagram} />
+              <SocialIcon href="https://www.instagram.com/godinov.id/" target="_blank" icon={Instagram} rel="noopener noreferrer" />
               <SocialIcon href="#" icon={Linkedin} />
               <SocialIcon href="mailto:godinov.id@gmail.com" icon={Mail} />
             </div>
@@ -97,6 +97,7 @@ export default function Footer() {
                   href="https://wa.me/+6283845663345"
                   target="_blank"
                   className="flex items-center gap-2.5 hover:text-godinov-bg transition-colors"
+                  rel="noopener noreferrer"
                 >
                   <Phone size={16} />
                   <span>+62 838-4566-3345</span>
@@ -129,12 +130,14 @@ export default function Footer() {
             <a
               href="#privacy"
               className="text-godinov-bg/60 hover:text-godinov-bg transition-colors"
+              rel="noopener noreferrer"
             >
               Privacy Policy
             </a>
             <a
               href="#terms"
               className="text-godinov-bg/60 hover:text-godinov-bg transition-colors"
+              rel="noopener noreferrer"
             >
               Terms of Use
             </a>
