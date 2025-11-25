@@ -54,7 +54,7 @@ export default function Navbar() {
               className="flex items-center gap-2 mr-6"
             >
               <img
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Godinov"
                 className="h-8 w-auto object-contain"
                 loading="lazy"

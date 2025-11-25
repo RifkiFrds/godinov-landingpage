@@ -46,7 +46,7 @@ export default function BubbleWA() {
                    transition-all duration-300"
       >
         <img
-          src="/images/logo-wa.png"
+          src="/images/logo-wa.webp"
           alt="WhatsApp"
           className="w-12 h-12 object-contain"
           loading="lazy"
