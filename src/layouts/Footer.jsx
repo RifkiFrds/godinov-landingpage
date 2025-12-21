@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Kolom Kiri: Logo, Tagline, Sosial */}
           <div className="md:col-span-4 lg:col-span-5">
             <img
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Godinov"
               className="h-8 mb-4"
               onError={(e) =>
