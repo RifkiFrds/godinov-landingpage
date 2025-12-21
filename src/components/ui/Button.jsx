@@ -1,6 +1,7 @@
 import React from "react"
 import { cva } from "class-variance-authority"
 import { cn } from "../../lib/utils"
+import { motion } from "framer-motion";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center font-medium transition-all duration-300 active:scale-95 cursor-pointer select-none",
@@ -32,13 +33,14 @@ const buttonVariants = cva(
   }
 )
 
-export function Button({ className, variant, size, radius, children, href, ...props }) {
+export function Button({ className, variant, size, whileHover, radius, children, href, ...props }) {
   const Component = href ? "a" : "button";
 
   return (
     <Component
       className={cn(buttonVariants({ variant, size, radius }), className)}
       href={href}
+      whileHover={whileHover}
       {...props}
     >
       {children}
