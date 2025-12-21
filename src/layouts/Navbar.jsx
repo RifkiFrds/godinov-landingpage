@@ -1,25 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../components/ui/Button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const [navbarLight, setNavbarLight] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "Layanan", href: "#services" },
     { label: "Portofolio", href: "#portfolio" },
-    { label: "Kontak", href: "#contact" }
+    { label: "Kontak", href: "#contact" },
+    {label: "Lacak Project", href: "/tracker"}
   ];
 
-  const handleScroll = (href) => {
-    const el = document.querySelector(href);
-    if (!el) return;
-    const offset = 80;
-    const top = el.offsetTop - offset;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
+const handleScroll = (href) => {
+  if (href.startsWith("/")) {
+    navigate(href);
+    return;
+  }
 
-  const [navbarLight, setNavbarLight] = useState(false);
+  if (href.startsWith("#")) {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        window.scrollTo({ top: el.offsetTop - 80, behavior: "smooth" });
+      }
+    }
+  }
+};
+
+
 
   useEffect(() => {
     const lightSections = document.querySelectorAll(".bg-godinov-light");
