@@ -3,54 +3,11 @@ import { Heading, Paragraph } from "../components/ui/Text";
 import { ParallaxScroll } from "../components/ParallaxScroll";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { usePortfolio } from "../hooks/usePortfolio";
 
-    const myProjects = [
-      {
-        title: "GOCARI — Platform Komunitas Kota Tangerang",
-        description:
-          "Platform komunitas digital untuk edukasi, UMKM, dan kemanusiaan di Kota Tangerang. Menyediakan konten belajar gratis, dukungan digitalisasi UMKM, hingga distribusi bantuan sosial transparan berbasis teknologi Next.js & Supabase.",
-        link: "http://gocari-id.netlify.app/",
-        images: "/images/portfolio/gocari.png",
-      },
-      {
-        title: "HIMTI Official Website Development",
-        description:
-          "Pembuatan website resmi HIMTI UMT dengan tampilan modern dan fitur lengkap: informasi acara, pendaftaran lomba, kelompok belajar, data dosen pembina, dan dokumentasi kegiatan. Dibangun menggunakan React Vite, Tailwind CSS, dan Express API.",
-        link: "https://web-himtiumt.vercel.app/",
-        images: "/images/portfolio/himti.png",
-      },
-      {
-        title: "SATSET AI — Productivity Web App",
-        description:
-          "Aplikasi AI untuk membantu mahasiswa menyelesaikan tugas lebih cepat. Menyediakan ChatBot AI, generator kerangka makalah, dan ringkasan jurnal instan. Dibangun dengan JS + Tailwind + Vite + Netlify Serverless & PWA support.",
-        link: "https://satset-ai.netlify.app/",
-        images: "/images/portfolio/satsetai.png",
-      },
-      {
-        title: "HIMTI Learning Group + HIMTIChat AI",
-        description:
-          "Platform komunitas belajar modern dengan integrasi AI berbasis IBM Granite. Dilengkapi PWA, animasi interaktif, filter mentor dinamis, riwayat chat pintar, voice input, dan export percakapan. Dibuat sebagai SPA React yang sangat optimal.",
-        link: "https://kelompok-belajar-himti.netlify.app/",
-        images: "/images/portfolio/kelbelajar.png",
-      },
-      {
-        title: "NaikKelas — Dashboard Perusahaan Trading",
-        description:
-          "Dashboard administrasi untuk mengelola konten dinamis, profil perusahaan, dan lowongan kerja. Menggunakan React di frontend dan Laravel API sebagai backend untuk pengelolaan data yang solid dan aman.",
-        link: "https://naikkelas-dashboard.netlify.app/",
-        images: "/images/portfolio/naikkelas.png",
-      },
-      {
-        title: "Banten Storyteller — Progressive Web App",
-        description:
-          "PWA modern yang menampilkan cerita inspiratif masyarakat Banten melalui teknologi peta interaktif. Memiliki fitur offline penuh, application shell caching, background sync, dan pengalaman seperti aplikasi native.",
-        link: "https://bantenstoryteller.netlify.app/",
-        images: "/images/portfolio/bantenstory.png",
-      },
-    ];
-
-    
 export const PortfolioSection = () => {
+  const { data: projects, isLoading, isError } = usePortfolio();
+
   return (
     <section id="portfolio" className="relative overflow-hidden bg-godinov py-24">
       <div className="relative max-w-6xl mx-auto px-6 z-10">
@@ -71,20 +28,33 @@ export const PortfolioSection = () => {
             </Paragraph>
           </div>
 
-          <Heading size="h2" className="text-godinov-bg font-bold leading-tight mb-4">
+          <Heading size="h2" className="text-godinov-bg font-bold mb-4">
             Hasil Karya & Solusi Digital
           </Heading>
 
           <Paragraph size="lg" className="text-godinov-bg/70">
-            Menampilkan berbagai proyek yang telah kami kembangkan — mulai dari
-            sistem manajemen perusahaan, aplikasi lintas platform, hingga desain
-            antarmuka modern. Setiap proyek dirancang untuk memberikan dampak
-            nyata bagi klien dan pengguna.
+            Menampilkan berbagai proyek yang telah kami kembangkan dengan fokus
+            pada kualitas, performa, dan dampak nyata bagi pengguna.
           </Paragraph>
         </motion.div>
       </div>
 
-      <ParallaxScroll projects={myProjects} className="h-[50rem]" />
+      {/* STATE */}
+      {isLoading && (
+        <p className="text-center text-godinov-bg/60">
+          Memuat portofolio...
+        </p>
+      )}
+
+      {isError && (
+        <p className="text-center text-red-400">
+          Gagal memuat data portofolio
+        </p>
+      )}
+
+      {!isLoading && projects?.length > 0 && (
+        <ParallaxScroll projects={projects} className="h-[50rem]" />
+      )}
     </section>
   );
 };
