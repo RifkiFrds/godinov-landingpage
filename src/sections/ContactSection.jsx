@@ -1,75 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "../components/ui/Input";
 import Textarea from "../components/ui/Textarea";
-import { sendInbox } from "../api/inbox";
 import { Phone, Mail, MapPin } from "lucide-react";
 import SuccessModal from "../components/ui/SuccessModal";
+import { useContactForm } from "../hooks/useContactForm";
 
 export default function ContactSection() {
-  const [loading, setLoading] = useState(false);
-  const [openSuccess, setOpenSuccess] = useState(false);
-
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    contact: "",
-    company: "",
-    address: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await sendInbox({
-        name: form.name,
-        email: form.email,
-        contact: form.contact,
-        company: form.company,
-        address: form.address,
-        description: form.message,
-      });
-
-      setOpenSuccess(true);
-
-      setForm({
-        name: "",
-        email: "",
-        contact: "",
-        company: "",
-        address: "",
-        message: "",
-      });
-    } catch (err) {
-      console.error(err);
-    }
-
-    setLoading(false);
-  };
+  const {
+    form,
+    loading,
+    openSuccess,
+    setOpenSuccess,
+    handleChange,
+    handleSubmit,
+  } = useContactForm();
 
   return (
     <section id="contact" className="py-20 bg-godinov-light px-4">
       <div className="max-w-6xl mx-auto">
         <div className="wave-godinov-shape-bawah"></div>
 
-        {/* Container Besar */}
         <div className="bg-white shadow-xl rounded-3xl grid md:grid-cols-3 overflow-hidden">
-          {/* --- Left: Contact Information Card (Godinov Blue) --- */}
-          <div className="bg-godinov p-10 text-white flex flex-col justify-between relative overflow-hidden md:col-span-1">
+          
+          {/* LEFT INFO */}
+          <div className="bg-godinov p-10 text-white flex flex-col justify-between md:col-span-1">
             <div>
               <h3 className="text-xl font-semibold mb-3">
                 Contact Information
               </h3>
-              <p className="text-white/85 text-sm leading-relaxed">
-                Kami siap membantu keperluan digital kamu—website, dashboard,
-                sistem informasi, dan konsultasi bisnis teknologi.
+              <p className="text-white/85 text-sm">
+                Kami siap membantu kebutuhan digital kamu—website, dashboard,
+                sistem informasi, dan konsultasi teknologi.
               </p>
 
               <div className="mt-8 space-y-5">
@@ -79,60 +40,55 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <p className="text-white/60 text-sm mt-10">© Godinov Indonesia</p>
+            <p className="text-white/60 text-sm mt-10">
+              © Godinov Indonesia
+            </p>
           </div>
 
-          {/* --- Right: Form Section --- */}
-          <div className="p-10 bg-white text-godinov md:col-span-2">
+          {/* FORM */}
+          <div className="p-10 md:col-span-2">
             <h3 className="text-2xl font-semibold mb-6 text-godinov">
               Get In Touch
             </h3>
 
-            <form className="grid md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
-              <div className="col-span-2 md:col-span-1">
-                <Input
-                  label="Your Name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                />
-              </div>
+            <form
+              className="grid md:grid-cols-2 gap-6"
+              onSubmit={handleSubmit}
+            >
+              <Input
+                label="Your Name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+              />
 
-              <div className="col-span-2 md:col-span-1">
-                <Input
-                  label="Your Email"
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="email@example.com"
-                />
-              </div>
+              <Input
+                label="Your Email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="email@example.com"
+              />
 
-              <div className="col-span-2 md:col-span-1">
-                <Input
-                  label="Phone Number"
-                  type="tel"
-                  name="contact"
-                  value={form.contact}
-                  onChange={handleChange}
-                  placeholder="+62..."
-                />
-              </div>
+              <Input
+                label="Phone Number"
+                name="contact"
+                value={form.contact}
+                onChange={handleChange}
+                placeholder="+62..."
+              />
 
-              <div className="col-span-2 md:col-span-1">
-                <Input
-                  label="Company (Optional)"
-                  name="company"
-                  value={form.company}
-                  onChange={handleChange}
-                  placeholder="Your company name"
-                />
-              </div>
+              <Input
+                label="Company (Optional)"
+                name="company"
+                value={form.company}
+                onChange={handleChange}
+                placeholder="Your company name"
+              />
 
-              {/* NEW FIELD : ADDRESS */}
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <Input
                   label="Address"
                   name="address"
@@ -142,7 +98,7 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <Textarea
                   label="Message"
                   name="message"
@@ -152,7 +108,7 @@ export default function ContactSection() {
                 />
               </div>
 
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <button
                   type="submit"
                   disabled={loading}
@@ -175,12 +131,16 @@ export default function ContactSection() {
           <div className="wave-penutup-shape"></div>
         </div>
       </div>
-      <SuccessModal open={openSuccess} onClose={() => setOpenSuccess(false)} />
+
+      <SuccessModal
+        open={openSuccess}
+        onClose={() => setOpenSuccess(false)}
+      />
     </section>
   );
 }
 
-// mini components
+// MINI COMPONENT
 function InfoItem({ icon: Icon, text }) {
   return (
     <div className="flex items-center gap-3">
@@ -189,4 +149,3 @@ function InfoItem({ icon: Icon, text }) {
     </div>
   );
 }
-

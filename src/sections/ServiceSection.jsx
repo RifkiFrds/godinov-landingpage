@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-
 import { Heading, Paragraph } from "../components/ui/Text";
 
 import { 

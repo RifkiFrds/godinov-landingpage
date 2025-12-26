@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SnakeNode from "./componentstracker/SnakeNode";
+import SnakeNode from "../components/SnakeNode";
 import Navbar from "../layouts/Navbar";
 import BubbleWA from "../components/BubbleWA";
 import { Search, Loader2, AlertTriangle } from "lucide-react";
