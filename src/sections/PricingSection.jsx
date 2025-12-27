@@ -123,7 +123,7 @@ export default function PricingSection() {
 
               {/* CTA */}
               <Button
-                href="https://wa.me/6283845663345"
+                href="https://wa.me/62895610756082/?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20proyek%20website%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"

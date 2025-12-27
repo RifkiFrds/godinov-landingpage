@@ -94,13 +94,13 @@ export default function Footer() {
               <h3 className="font-semibold text-godinov-bg mb-4">Kontak</h3>
               <div className="flex flex-col gap-3 text-godinov-bg/70">
                 <a
-                  href="https://wa.me/+6283845663345"
+                  href="https://wa.me/+62895610756082/?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20proyek%20website%20saya."
                   target="_blank"
                   className="flex items-center gap-2.5 hover:text-godinov-bg transition-colors"
                   rel="noopener noreferrer"
                 >
                   <Phone size={16} />
-                  <span>+62 838-4566-3345</span>
+                  <span>+62 8956-1075-6082</span>
                 </a>
                 <a
                   href="mailto:halo@godinov.com"

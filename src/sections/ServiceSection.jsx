@@ -71,7 +71,7 @@ const ServiceCard = ({ icon: Icon, title, tagline, desc }) => (
 
     <div className="flex items-center gap-2 text-godinov-bg/40 group-hover:text-godinov-cyan 
                     transition-all duration-300">
-      <a href="https://wa.me/6283845663345" target="_blank" className="text-sm font-medium">Minta Penawaran Sekarang</a>
+      <a href="https://wa.me/62895610756082/?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20proyek%20website%20saya." target="_blank" className="text-sm font-medium">Minta Penawaran Sekarang</a>
       <ArrowRight 
         size={18}
         className="transform group-hover:translate-x-1 transition-all duration-300" 
