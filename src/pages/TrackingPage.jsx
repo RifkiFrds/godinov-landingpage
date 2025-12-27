@@ -38,7 +38,7 @@ export default function TrackingPage() {
 
     try {
       // Call API tracker dengan project code
-      const response = await api.get(`/api/tracker/${orderId.toUpperCase()}`);
+      const response = await api.get(`/tracker/${orderId.toUpperCase()}`);
       
       if (response.data.success) {
         const project = response.data.data;
